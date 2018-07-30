@@ -1,6 +1,8 @@
 defmodule DogController do
+  import RouteHelper
+
   def show do
     dog = %{ id: 1, name: "Boo" }
-    IO.puts RouteHelper.dogs_route(dog)
+    IO.puts dogs_route(dog)
   end
 end
