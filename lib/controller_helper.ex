@@ -1,8 +1,12 @@
 defmodule ControllerHelper do
-  defmacro create_link_helper() do
+  defmacro create_link_helper(name) do
     quote do
-      def dogs_index do
-        "/dogs"
+      def unquote(:"#{name}_index")() do
+        unquote("/#{name}")
+      end
+
+      def unquote(:"#{name}_show")(id) do
+        "#{unquote(name)}/#{id}"
       end
     end
   end
