@@ -1,6 +1,5 @@
 defmodule DogController do
-  require ControllerHelper
-  ControllerHelper.create_link_helper(:dogs)
+  use ControllerHelper, :dogs
 
   def index do
     IO.puts dogs_index()

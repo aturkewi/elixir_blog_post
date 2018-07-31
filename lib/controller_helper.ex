@@ -1,5 +1,5 @@
 defmodule ControllerHelper do
-  defmacro create_link_helper(name) do
+  defmacro __using__(name) do
     quote do
       def unquote(:"#{name}_index")() do
         unquote("/#{name}")
